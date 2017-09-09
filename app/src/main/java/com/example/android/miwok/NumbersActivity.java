@@ -18,7 +18,6 @@ package com.example.android.miwok;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -60,10 +59,9 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Word word = words.get(position);
+                Word word = words.get(position);//Return the word object from the corresponding position of the arrayList<Word>
                 mediaPlayer = MediaPlayer.create(getApplicationContext(),word.getAudioResourceId());
                 mediaPlayer.start();
-                Log.i("NumbersActivity", "Position: "+position);
             }
         });
     }
